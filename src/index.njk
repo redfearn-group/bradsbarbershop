@@ -39,7 +39,7 @@ layout: layouts/base.njk
     <h2>Haircuts</h2>
     {%- set services = shop.services -%}{%- set showDescriptions = false -%}
     {% include "partials/price-list.njk" %}
-    <p class="small"><a class="text-link" href="/services/">All prices</a></p>
+    <p class="small"><a class="text-link" href="/prices/">All prices</a></p>
     <div class="board-art">{% include "art/shears-comb.svg" %}</div>
   </div>
   <div class="card" id="hours">
@@ -59,7 +59,7 @@ layout: layouts/base.njk
 <section class="section story"><div class="wrap">
   <div class="story-art"><div class="floor" aria-hidden="true"></div>{% include "art/chair.svg" %}</div>
   <div>
-    <p class="eyebrow">The shop</p>
+    <p class="eyebrow">About</p>
     <h2>A Main Street barber shop since {{ shop.foundingYear }}.</h2>
     <p>Brad's has been cutting hair in downtown Spanish Fork since {{ shop.foundingYear }}. Classic chairs and a pole out front.</p>
     <p><a class="text-link" href="/about/">More about the shop</a></p>

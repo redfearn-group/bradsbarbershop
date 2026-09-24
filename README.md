@@ -84,7 +84,7 @@ src/
   _includes/art/         illustrations
   css/main.css           all styling
   index.njk              home
-  services/  about/  contact/   the other pages
+  prices/  about/  visit/      the other pages
   404.njk                page-not-found
   CNAME                  bradsbarbershop.com
 ```

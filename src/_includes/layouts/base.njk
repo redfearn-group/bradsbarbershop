@@ -47,7 +47,7 @@
 <header class="site"><div class="wrap">
   <a class="brand" href="/" aria-label="{{ shop.name }}, home">{% include "logo-razor.svg" %}</a>
   <nav class="main" aria-label="Main">
-    {%- for item in [["/", "Home"], ["/services/", "Prices"], ["/about/", "The shop"], ["/contact/", "Visit"]] %}
+    {%- for item in [["/", "Home"], ["/prices/", "Prices"], ["/about/", "About"], ["/visit/", "Visit"]] %}
     <a href="{{ item[0] }}"{% if page.url == item[0] %} aria-current="page"{% endif %}>{{ item[1] }}</a>
     {%- endfor %}
   </nav>

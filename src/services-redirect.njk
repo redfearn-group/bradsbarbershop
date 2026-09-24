@@ -1,0 +1,19 @@
+---
+permalink: /services/index.html
+eleventyExcludeFromCollections: true
+---
+{#- The old WordPress site had its price list at /services/. GitHub Pages can't send
+    server redirects, so this page forwards old links and bookmarks to /prices/. -#}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prices | {{ shop.name }}</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{{ shop.url }}/prices/">
+<meta http-equiv="refresh" content="0; url=/prices/">
+</head>
+<body>
+<p>The price list has moved to <a href="/prices/">/prices/</a>.</p>
+</body>
+</html>
