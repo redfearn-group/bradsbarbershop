@@ -6,7 +6,7 @@ layout: layouts/base.njk
   <div>
     <p class="eyebrow">Main Street, Spanish Fork &middot; Since {{ shop.foundingYear }}</p>
     <h1>{{ shop.tagline }}</h1>
-    <p class="lead">Walk in, take a seat, and leave looking sharp. Every haircut ends with a straight-razor neck shave, the way it has always been done here.</p>
+    <p class="lead">Walk in, take a seat, and leave looking sharp.</p>
     <div class="cta">
       <a class="btn btn-solid" href="tel:{{ shop.phone.tel }}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call {{ shop.phone.display }}</a>
       <a class="btn btn-line" href="{{ shop.maps.directions }}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Get directions</a>
@@ -39,7 +39,7 @@ layout: layouts/base.njk
     <h2>Haircuts</h2>
     {%- set services = shop.services -%}{%- set showDescriptions = false -%}
     {% include "partials/price-list.njk" %}
-    <p class="small">Every haircut includes a straight-razor neck shave. <a class="text-link" href="/services/">All prices</a></p>
+    <p class="small"><a class="text-link" href="/services/">All prices</a></p>
     <div class="board-art">{% include "art/shears-comb.svg" %}</div>
   </div>
   <div class="card" id="hours">
