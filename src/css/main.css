@@ -183,7 +183,7 @@ table.hours { width: 100%; border-collapse: collapse; margin-top: 16px; font-siz
 .story p { color: var(--muted); max-width: 52ch; }
 .story-art { position: relative; background: var(--plate); border: 1px solid var(--line); border-radius: var(--radius); padding: 40px 40px 0; display: grid; place-items: center; overflow: hidden; min-height: 320px; }
 .story-art .ill { position: relative; width: min(340px, 80%); margin-bottom: -2px; }
-.story-art .checker { position: absolute; left: 0; right: 0; bottom: 0; height: 34%; background: repeating-conic-gradient(var(--ill-ink) 0 25%, var(--ill-paper) 0 50%) 0 0 / 40px 40px; }
+.story-art .floor { position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: var(--ill-paper); border-top: 3px solid var(--ill-ink); }
 .text-link { font-weight: 700; color: var(--acc); }
 
 /* visit */

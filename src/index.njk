@@ -19,7 +19,7 @@ layout: layouts/base.njk
   <div class="hero-art">
     <div class="hero-pole">{% include "art/pole.svg" %}</div>
     <figure class="frame">
-      <img src="{{ photo.src }}"{% if photo.srcSmall %} srcset="{{ photo.srcSmall }} 800w, {{ photo.src }} {{ photo.width }}w" sizes="(min-width: 960px) 560px, 100vw"{% endif %}width="{{ photo.width }}" height="{{ photo.height }}" alt="{{ photo.alt }}" fetchpriority="high">
+      <img src="{{ photo.src }}"{% if photo.srcSmall %} srcset="{{ photo.srcSmall }} 800w, {{ photo.src }} {{ photo.width }}w" sizes="(min-width: 960px) 560px, 100vw"{% endif %} width="{{ photo.width }}" height="{{ photo.height }}" alt="{{ photo.alt }}" fetchpriority="high">
       <figcaption>{{ photo.caption }}</figcaption>
     </figure>
   </div>
@@ -58,11 +58,11 @@ layout: layouts/base.njk
 </div></section>
 
 <section class="section story"><div class="wrap">
-  <div class="story-art"><div class="checker" aria-hidden="true"></div>{% include "art/chair.svg" %}</div>
+  <div class="story-art"><div class="floor" aria-hidden="true"></div>{% include "art/chair.svg" %}</div>
   <div>
     <p class="eyebrow">The shop</p>
     <h2>A Main Street barber shop since {{ shop.foundingYear }}.</h2>
-    <p>Brad's has been cutting hair in downtown Spanish Fork since {{ shop.foundingYear }}. Classic chairs, a checkered floor and a pole out front. Not much has changed, and regulars like it that way.</p>
+    <p>Brad's has been cutting hair in downtown Spanish Fork since {{ shop.foundingYear }}. Classic chairs and a pole out front. Not much has changed, and regulars like it that way.</p>
     <p><a class="text-link" href="/about/">More about the shop</a></p>
   </div>
 </div></section>
