@@ -18,7 +18,7 @@ for (const d of shop.hours.filter((h) => h.open)) {
   groups.get(key).days.push(`https://schema.org/${DAY_URL[d.code]}`);
 }
 
-export default {
+const schema = {
   "@context": "https://schema.org",
   "@type": "HairSalon",
   "@id": `${shop.url}/#shop`,
@@ -50,5 +50,9 @@ export default {
     opens: g.opens,
     closes: g.closes,
   })),
-  sameAs: shop.social.filter((s) => s.name !== "Google").map((s) => s.url),
 };
+
+const profiles = shop.social.filter((s) => s.name !== "Google").map((s) => s.url);
+if (profiles.length) schema.sameAs = profiles;
+
+export default schema;

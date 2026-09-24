@@ -52,7 +52,7 @@ In `src/assets/`:
 | :--- | :--- |
 | `logo-razor.svg` | Main logo, for light backgrounds. |
 | `logo-razor-dark.svg` | Main logo, for dark backgrounds. |
-| `seal.svg`, `seal.png` | The round seal: profile photos on Google, Facebook and Yelp, stickers, the shop window. |
+| `seal.svg`, `seal.png` | The round seal: the Google Business Profile photo, stickers, the shop window. |
 | `favicon.*`, `apple-touch-icon.png`, `icon-*.png` | The B icon: browser tabs, bookmarks and phone home screens. |
 | `og-image.png` | The preview image that shows when someone shares the link. |
 

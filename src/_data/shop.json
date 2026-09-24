@@ -58,9 +58,7 @@
   },
 
   "social": [
-    { "name": "Google", "url": "https://www.google.com/maps/search/?api=1&query=Brad%27s+Barber+Shop+54+N+Main+St+Spanish+Fork+UT" },
-    { "name": "Facebook", "url": "https://www.facebook.com/bradsbarbershop/" },
-    { "name": "Yelp", "url": "https://www.yelp.com/biz/brads-barbershop-spanish-fork" }
+    { "name": "Google", "url": "https://www.google.com/maps/search/?api=1&query=Brad%27s+Barber+Shop+54+N+Main+St+Spanish+Fork+UT" }
   ],
 
   "maps": {

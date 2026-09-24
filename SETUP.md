@@ -166,15 +166,11 @@ Checkpoint: status code 200, www resolves to the apex URL, and the test email ar
 
 ---
 
-## Step 7. Update your listings
+## Step 7. Check the Google Business Profile
 
-The link itself doesn't change, it's still `https://bradsbarbershop.com` everywhere. This step is mainly confirming that link still resolves correctly on:
+The link itself doesn't change: it's still `https://bradsbarbershop.com`. Open the Google Business Profile and confirm the website link opens the new site.
 
-- Google Business Profile
-- Facebook page
-- Yelp listing
-
-If you want, this is also a good time to swap the profile photo on those listings to the new seal logo at `src/assets/seal.png` in the repo. That part is optional and not required for the move.
+If you want, this is also a good time to swap the profile photo to the new seal logo at `src/assets/seal.png` in the repo. That part is optional and not required for the move.
 
 Checkpoint: none, this step has no DNS or hosting risk.
 
