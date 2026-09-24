@@ -40,7 +40,7 @@
 
 <aside class="util" aria-label="Shop address, hours and phone"><div class="wrap">
   <span>{{ shop.address.street }}, {{ shop.address.city }}, {{ shop.address.region }} {{ shop.address.postalCode }}</span>
-  <span data-status>{% for h in shop.hours | hoursSummary %}{{ h.days }} {{ h.time }}{% if not loop.last %}, {% endif %}{% endfor %}</span>
+  <span data-status>{% for h in shop.hours | hoursSummary %}{{ h.days }}: {{ h.time }}{% if not loop.last %}; {% endif %}{% endfor %}</span>
   <a href="tel:{{ shop.phone.tel }}">{{ shop.phone.display }}</a>
 </div></aside>
 

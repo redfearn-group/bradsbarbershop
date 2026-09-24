@@ -15,7 +15,7 @@ The easiest way is on GitHub itself: open the file, click the pencil icon, make 
 | To change | Edit in `shop.json` |
 | :--- | :--- |
 | Opening hours | `hours`: one entry per day, in 24-hour time, such as `"08:00"` and `"18:00"`. Use `null` for both on a closed day. |
-| Prices | `services`: each has a `name`, a `price` (a whole number, no dollar sign) and a short `description`. Add or remove entries freely. |
+| Prices | `services`: each has a `name` and a `price` (a whole number, no dollar sign), plus an optional short `description` shown on the Prices page. Add or remove entries freely. |
 | Phone number | `phone`: `display` is what people see, and `tel` is the dial string, in the form `+18017982629`. Change both. |
 | Address | `address` and `geo`. If the shop ever moves, update `maps` too. |
 | Rating | `rating.value`, when the Google rating changes. |
@@ -64,7 +64,7 @@ Three colors, with light and dark modes: blue `#0A1128`, red `#BF1E2E` and cream
 
 ## Working on it locally
 
-Needs [Node.js](https://nodejs.org/) 20 or later.
+Needs [Node.js](https://nodejs.org/) 22 or later. GitHub builds the site with Node 24.
 
 ```powershell
 npm ci
@@ -86,5 +86,6 @@ src/
   index.njk              home
   prices/  about/  visit/      the other pages
   404.njk                page-not-found
+  services-redirect.njk  sends the old WordPress /services/ address to /prices/
   CNAME                  bradsbarbershop.com
 ```

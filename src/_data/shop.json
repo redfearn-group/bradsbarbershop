@@ -33,15 +33,11 @@
   "services": [
     {
       "name": "Men's haircut",
-      "price": 20,
-      "description": "A classic cut.",
-      "featured": true
+      "price": 20
     },
     {
       "name": "Kids' haircut",
-      "price": 18,
-      "description": "A classic cut for kids.",
-      "featured": true
+      "price": 18
     }
   ],
 

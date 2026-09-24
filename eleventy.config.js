@@ -69,10 +69,6 @@ export default function (eleventyConfig) {
     return Array.from({ length: n }, (_, k) => ({ ...hours[(from + k) % n], index: (from + k) % n }));
   });
   eleventyConfig.addFilter("money", (n) => `$${n}`);
-  eleventyConfig.addFilter("hourNumber", (hhmm) => {
-    const [h, m] = hhmm.split(":").map(Number);
-    return h + m / 60;
-  });
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 

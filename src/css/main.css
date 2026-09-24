@@ -68,6 +68,8 @@ body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(-
 img, svg { display: block; max-width: 100%; }
 img { height: auto; }
 a { color: inherit; }
+/* Phone numbers never break across lines. */
+a[href^="tel:"] { white-space: nowrap; }
 p { margin: 0 0 1em; }
 .wrap { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 16px; }
 @media (min-width: 760px) { .wrap { padding: 0 32px; } }
