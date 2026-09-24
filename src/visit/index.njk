@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+title: Visit
+description: Brad's Barber Shop, 54 N Main Street, Spanish Fork, Utah. Hours, directions and phone number.
+---
+<section class="page-head"><div class="wrap">
+  <p class="eyebrow">Visit</p>
+  <h1>Find the pole on Main Street.</h1>
+  <p class="lead">Walk in any time we're open, or call to book a time.</p>
+</div></section>
+
+<section class="section-tight"><div class="wrap grid-2">
+  <div class="card">
+    <h2>{{ shop.name }}</h2>
+    <address style="margin-top:14px">{{ shop.address.street }}<br>{{ shop.address.city }}, {{ shop.address.region }} {{ shop.address.postalCode }}</address>
+    <div class="cta">
+      <a class="btn btn-solid" href="tel:{{ shop.phone.tel }}">Call {{ shop.phone.display }}</a>
+      <a class="btn btn-line" href="{{ shop.maps.directions }}">Get directions<span class="visually-hidden"> in Google Maps</span></a>
+    </div>
+    <h2 style="margin-top:32px">Hours</h2>
+    {% include "partials/hours-table.njk" %}
+    <p class="small"><span data-status></span></p>
+  </div>
+  <div class="map">
+    <iframe src="{{ shop.maps.embed }}" title="Map showing {{ shop.name }} at {{ shop.address.street }}, {{ shop.address.city }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+  </div>
+</div></section>
+
+<section class="section-tight visit"><div class="wrap"><div class="card">
+  <div class="scene">{% art "storefront" %}</div>
+  <div class="body">
+    <h2>Look for the blue awning.</h2>
+    <p class="muted">The barber pole is on the wall by the window.</p>
+  </div>
+</div></div></section>

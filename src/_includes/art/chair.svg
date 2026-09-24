@@ -1,0 +1,46 @@
+<svg aria-hidden="true" focusable="false" class="ill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320">
+  <!-- round pedestal base -->
+  <ellipse cx="160" cy="292" rx="92" ry="18" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <ellipse cx="160" cy="283" rx="46" ry="11" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- flared skirt where column meets base -->
+  <path d="M128,268 L192,268 L176,286 L144,286 Z"
+        fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- hydraulic column -->
+  <rect x="140" y="150" width="40" height="120" rx="4"
+        fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="140" y1="192" x2="180" y2="192" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="140" y1="228" x2="180" y2="228" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- footrest plate -->
+  <line x1="178" y1="256" x2="206" y2="256" stroke="var(--ill-mid, #8A93A6)" stroke-width="11" stroke-linecap="round"/>
+  <ellipse cx="212" cy="258" rx="34" ry="10" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- chrome frame strip under the seat cushion -->
+  <rect x="86" y="166" width="156" height="12" rx="5"
+        fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- seat cushion -->
+  <rect x="88" y="140" width="156" height="30" rx="11"
+        fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M104,150 L228,150" fill="none" stroke="var(--ill-paper, #F7F4EF)" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- backrest and headrest, tilted back -->
+  <g transform="rotate(-9 108 95)">
+    <rect x="78" y="42" width="60" height="112" rx="16"
+          fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M88,74 L128,74" fill="none" stroke="var(--ill-paper, #F7F4EF)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <path d="M88,104 L128,104" fill="none" stroke="var(--ill-paper, #F7F4EF)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <path d="M88,130 L128,130" fill="none" stroke="var(--ill-paper, #F7F4EF)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    <!-- headrest -->
+    <rect x="83" y="18" width="50" height="30" rx="13"
+          fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+
+  <!-- armrest -->
+  <rect x="96" y="120" width="78" height="15" rx="7.5"
+        fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="152" y="120" width="13" height="28" rx="4"
+        fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

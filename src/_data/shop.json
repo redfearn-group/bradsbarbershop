@@ -1,0 +1,75 @@
+{
+  "name": "Brad's Barber Shop",
+  "tagline": "Classic cuts, finished with a straight razor.",
+  "description": "Classic haircuts on Main Street in Spanish Fork, Utah, since 1979. Walk-ins welcome. Every haircut is finished with a straight-razor neck shave.",
+  "url": "https://bradsbarbershop.com",
+  "foundingYear": 1979,
+  "timezone": "America/Denver",
+
+  "address": {
+    "street": "54 N Main Street",
+    "city": "Spanish Fork",
+    "region": "UT",
+    "postalCode": "84660",
+    "country": "US"
+  },
+  "geo": { "lat": 40.1105824, "lng": -111.6544394 },
+
+  "phone": {
+    "display": "(801) 798-2629",
+    "tel": "+18017982629"
+  },
+
+  "hours": [
+    { "day": "Sunday",    "code": "Su", "open": null,    "close": null },
+    { "day": "Monday",    "code": "Mo", "open": null,    "close": null },
+    { "day": "Tuesday",   "code": "Tu", "open": "08:00", "close": "18:00" },
+    { "day": "Wednesday", "code": "We", "open": "08:00", "close": "18:00" },
+    { "day": "Thursday",  "code": "Th", "open": "08:00", "close": "18:00" },
+    { "day": "Friday",    "code": "Fr", "open": "08:00", "close": "18:00" },
+    { "day": "Saturday",  "code": "Sa", "open": "08:00", "close": "12:30" }
+  ],
+
+  "services": [
+    {
+      "name": "Men's haircut",
+      "price": 20
+    },
+    {
+      "name": "Kids' haircut",
+      "price": 18
+    }
+  ],
+
+  "barbers": [],
+
+  "awards": [
+    { "title": "Best of Utah Valley", "detail": "Daily Herald Readers' Choice, 1st place" }
+  ],
+
+  "rating": {
+    "value": "4.9",
+    "source": "Google",
+    "url": "https://www.google.com/maps/search/?api=1&query=Brad%27s+Barber+Shop+54+N+Main+St+Spanish+Fork+UT"
+  },
+
+  "social": [
+    { "name": "Google", "label": "Google Maps", "url": "https://www.google.com/maps/search/?api=1&query=Brad%27s+Barber+Shop+54+N+Main+St+Spanish+Fork+UT" }
+  ],
+
+  "maps": {
+    "embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3051.4227055799297!2d-111.6544394!3d40.1105824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x874dbcd00db9474b%3A0xa559a05dacc178b3!2sBrad's%20Barber%20Shop!5e0!3m2!1sen!2sus!4v1697334166793!5m2!1sen!2sus",
+    "directions": "https://www.google.com/maps/dir/?api=1&destination=Brad%27s+Barber+Shop+54+N+Main+St+Spanish+Fork+UT+84660"
+  },
+
+  "gallery": [
+    {
+      "src": "/assets/photos/shop-interior.jpg",
+      "srcSmall": "/assets/photos/shop-interior-800.jpg",
+      "width": 1080,
+      "height": 810,
+      "alt": "Two barbers cutting hair in the shop's classic barber chairs",
+      "caption": "Inside the shop on Main Street."
+    }
+  ]
+}

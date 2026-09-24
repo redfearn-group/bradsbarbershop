@@ -1,0 +1,39 @@
+<svg aria-hidden="true" focusable="false" class="ill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- comb, diagonal, behind the shears -->
+  <g transform="rotate(-20 120 165)">
+    <rect x="15" y="158" width="210" height="14" rx="2" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="25" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="39" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="53" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="67" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="81" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="95" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="109" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="123" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="137" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="151" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="165" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="179" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="193" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+    <rect x="207" y="172" width="5" height="28" fill="var(--ill-ink, #0A1128)"/>
+  </g>
+
+  <!-- shear blade A: tip upper-right, handle lower-left -->
+  <path d="M198,58 L204,66 L134,124 L124,116 Z"
+        fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="129" y1="120" x2="64" y2="193" stroke="var(--ill-mid, #8A93A6)" stroke-width="12" stroke-linecap="round"/>
+  <line x1="129" y1="120" x2="64" y2="193" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <circle cx="62" cy="197" r="19" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3"/>
+  <circle cx="62" cy="197" r="10" fill="var(--ill-paper, #F7F4EF)"/>
+
+  <!-- shear blade B: tip upper-left, handle lower-right -->
+  <path d="M42,58 L36,66 L106,124 L116,116 Z"
+        fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="111" y1="120" x2="176" y2="193" stroke="var(--ill-mid, #8A93A6)" stroke-width="12" stroke-linecap="round"/>
+  <line x1="111" y1="120" x2="176" y2="193" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <circle cx="178" cy="197" r="19" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3"/>
+  <circle cx="178" cy="197" r="10" fill="var(--ill-paper, #F7F4EF)"/>
+
+  <!-- pivot screw -->
+  <circle cx="120" cy="120" r="8" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3"/>
+</svg>

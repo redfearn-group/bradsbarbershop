@@ -1,0 +1,40 @@
+<svg aria-hidden="true" focusable="false" class="ill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 400">
+  <defs>
+    <clipPath id="poleGlassClip">
+      <rect x="30" y="70" width="60" height="270"/>
+    </clipPath>
+    <pattern id="poleStripes" width="42" height="42" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect x="0" y="0" width="42" height="42" fill="var(--ill-paper, #F7F4EF)"/>
+      <rect x="0" y="0" width="14" height="42" fill="var(--ill-accent, #BF1E2E)"/>
+      <rect x="21" y="0" width="14" height="42" fill="var(--ill-ink, #0A1128)"/>
+    </pattern>
+  </defs>
+
+  <!-- wall bracket -->
+  <path d="M90,112 L114,112 L114,102 L120,102 L120,148 L114,148 L114,138 L90,138 Z"
+        fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- finial ball -->
+  <circle cx="60" cy="15" r="9" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- top dome cap -->
+  <path d="M22,52 C22,31 38,19 60,19 C82,19 98,31 98,52 L98,60 L22,60 Z"
+        fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- top collar band -->
+  <rect x="25" y="60" width="70" height="12" rx="2" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- glass cylinder with helical stripes -->
+  <rect x="30" y="70" width="60" height="270" fill="url(#poleStripes)" clip-path="url(#poleGlassClip)"
+        stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- bottom collar band -->
+  <rect x="25" y="338" width="70" height="12" rx="2" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- bottom cap (inverted dome) -->
+  <path d="M22,350 L98,350 L98,358 C98,377 82,389 60,389 C38,389 22,377 22,358 Z"
+        fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- foot -->
+  <rect x="42" y="389" width="36" height="8" rx="2" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

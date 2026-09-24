@@ -1,0 +1,8 @@
+<table class="hours">
+  <caption class="visually-hidden">Opening hours</caption>
+  <tbody>
+  {%- for h in shop.hours | weekForDisplay %}
+  <tr data-day="{{ h.index }}"><th scope="row">{{ h.day }}</th><td>{% if h.open %}{{ h.open | timeLabel }} to {{ h.close | timeLabel }}{% else %}Closed{% endif %}</td></tr>
+  {%- endfor %}
+  </tbody>
+</table>
