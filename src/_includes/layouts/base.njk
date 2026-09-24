@@ -51,7 +51,7 @@
     <a href="{{ item[0] }}"{% if page.url == item[0] %} aria-current="page"{% endif %}>{{ item[1] }}</a>
     {%- endfor %}
   </nav>
-  <a class="btn btn-solid" href="tel:{{ shop.phone.tel }}" aria-label="Call to book, {{ shop.phone.display }}">{{ phoneIcon | safe }}<span class="call-short">Call</span><span class="call-long">Call to book</span></a>
+  <a class="btn btn-solid" href="tel:{{ shop.phone.tel }}" aria-label="Call to book, {{ shop.phone.display }}">{{ phoneIcon | safe }}Call to book</a>
 </div></header>
 
 <main id="main" tabindex="-1">

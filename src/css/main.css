@@ -98,22 +98,24 @@ header.site { position: sticky; top: 0; z-index: 20; background: var(--bg); bord
 header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; column-gap: 16px; padding-top: 10px; }
 .brand { display: block; flex: none; }
 .logo { height: 46px; width: auto; aspect-ratio: 328 / 110; }
-@media (min-width: 760px) { .logo { height: 58px; } }
-/* On phones and tablets the menu is a full-width row under the logo; on desktop it sits inline. */
-nav.main { order: 3; flex-basis: 100%; display: flex; justify-content: space-between; margin-top: 8px; border-top: 1px solid var(--line); font-weight: 600; }
+/* Phones: the logo on top, the menu in a row underneath, and calling handled by the fixed call
+   bar at the bottom of the screen. From 760px everything sits on one row: logo, menu, Call.
+   The visual order always matches the source order, so keyboard focus moves the way the
+   page reads (WCAG 2.4.3). */
+nav.main { flex-basis: 100%; display: flex; justify-content: space-between; margin-top: 8px; border-top: 1px solid var(--line); font-weight: 600; }
 nav.main a { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 44px; text-decoration: none; border-bottom: 2px solid transparent; }
 nav.main a:hover, nav.main a[aria-current="page"] { border-bottom-color: var(--red); }
-@media (min-width: 900px) {
+header.site .btn { display: none; min-height: 44px; padding: 10px 16px; }
+@media (min-width: 760px) {
+  .logo { height: 58px; }
   header.site .wrap { flex-wrap: nowrap; min-height: 72px; padding-top: 0; }
-  nav.main { order: 0; flex-basis: auto; gap: 28px; margin-top: 0; border-top: 0; }
+  nav.main { flex-basis: auto; gap: 20px; margin-top: 0; border-top: 0; }
   nav.main a { flex: none; }
+  header.site .btn { display: inline-flex; }
 }
-@media (max-width: 899px) { html { scroll-padding-top: 130px; } }
-/* Keeps a focused link from scrolling in underneath the fixed call bar on phones (WCAG 2.4.11). */
-@media (max-width: 759px) { html { scroll-padding-bottom: 96px; } }
-header.site .btn { min-height: 44px; padding: 10px 16px; }
-.call-long { display: none; }
-@media (min-width: 600px) { .call-short { display: none; } .call-long { display: inline; } }
+@media (min-width: 900px) { nav.main { gap: 28px; } }
+/* Keeps focused links clear of the sticky header and, on phones, the fixed call bar (WCAG 2.4.11). */
+@media (max-width: 759px) { html { scroll-padding-top: 130px; scroll-padding-bottom: calc(96px + env(safe-area-inset-bottom)); } }
 
 /* hero */
 .hero { padding: 36px 0 44px; }
@@ -214,6 +216,8 @@ address { font-style: normal; font-size: 1.15rem; margin-bottom: 18px; }
 /* contact map */
 .map { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); min-height: 320px; }
 .map iframe { display: block; width: 100%; height: 100%; min-height: 380px; border: 0; }
+/* Keyboard focus inside Google's map gets our own ring around the whole map. */
+.map:focus-within { outline: 3px solid var(--acc); outline-offset: 3px; }
 
 /* gallery */
 .gallery { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); }

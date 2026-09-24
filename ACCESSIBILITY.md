@@ -9,14 +9,15 @@
 | Check | What was done | Result |
 | :--- | :--- | :--- |
 | Automated scan | [axe-core](https://github.com/dequelabs/axe-core) 4.13, run with its WCAG 2.0, 2.1 and 2.2 A and AA rules plus its best-practice rules. It covered every page at phone (375 px) and desktop (1280 px) widths, in both light and dark mode: 20 page views. | 0 violations |
-| Keyboard | Tabbed through every page at phone and desktop widths. Every link can be reached in a logical order, and every one shows a visible focus ring. | Pass |
+| Keyboard | Tabbed through every page at phone and desktop widths. Every link can be reached, the tab order matches the order the page reads on screen at every width, and every stop shows a visible focus ring. Focus inside the Google map gets a ring around the map. | Pass |
 | Focus not hidden (2.4.11) | At each tab stop, checked that the focused link is actually visible on screen and not covered by the sticky header or the phone call bar. | Pass |
-| Target size (2.5.8) | Every link is at least 24 x 24 px or has 24 px of clear space around it. Buttons and menu links are at least 44 px tall. | Pass |
+| Target size (2.5.8) | AA needs 24 x 24 px. Every link and button on the site is at least 44 px tall, which also meets the stricter AAA guideline. | Pass |
 | Reflow (1.4.10) | No sideways scrolling at 320 px wide, or at 640 px, which is desktop at 200% zoom. | Pass |
 | Text spacing (1.4.12) | Increased line, letter, word and paragraph spacing to the WCAG test values. No text was cut off and nothing scrolled sideways. | Pass |
 | Color contrast (1.4.3, 1.4.11) | Every text and background pair, in both modes (table below). | Pass |
 | Forced colors | Checked in Windows High Contrast emulation. Buttons keep their outlines, the logo switches to the system text color, and the current page stays marked in the menu. | Pass |
 | Screen reader structure | Reviewed the accessibility tree for each page, which is what a screen reader reads out: landmarks, headings, link names, the hours table, and image descriptions. | Pass |
+| Criterion-by-criterion review | A separate review of the templates and CSS against every WCAG 2.2 A and AA success criterion. It found one issue, the header's tab order on phones, which is now fixed. | Pass |
 
 **Not yet done:** a person listening with a real screen reader (NVDA or JAWS on Windows, or VoiceOver on an iPhone). The structure is right, but a five-minute listen on a phone is the one check the tools can't replace.
 
@@ -42,9 +43,10 @@ Red on the dark blue is 3.1:1. That's enough for a button edge but not for text,
 ## What makes it work
 
 - **Landmarks and headings.** Each page has a banner, a main menu, main content and a footer, plus one H1 with H2s below it and no skipped levels. A "Skip to content" link appears on the first press of Tab.
+- **Phones.** Calling is always one tap away in the bar fixed to the bottom of the screen, and a focused link never scrolls in underneath that bar or the header.
 - **Link names.** Buttons say what they do: "Call to book, (801) 798-2629". Directions links add "in Google Maps", which is read aloud but not shown, so people know they're leaving the site.
 - **Hours.** Hours use a real table with a row heading for each day. Day names are written out in full, because a screen reader reads "Tue" as a word. The "Today" marker is real text, so it's read as "Thursday, Today".
-- **Images.** The shop photo has a description. The logo is named "Brad's Barber Shop". Every illustration is decorative and hidden from screen readers.
+- **Images.** The shop photo has a description. The logo link is named "Brad's Barber Shop, home". Every illustration is decorative and hidden from screen readers.
 - **No color-only meaning.** The open and closed dot always has its words next to it. Links in text are underlined.
 - **Motion and zoom.** Smooth scrolling is turned off for people who ask their device for reduced motion. The page can be zoomed and rotated freely.
 

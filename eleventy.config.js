@@ -84,7 +84,7 @@ export default function (eleventyConfig) {
     const n = ++artUses;
     return readFileSync(`src/_includes/art/${name}.svg`, "utf8")
       .replace(/id="([^"]+)"/g, `id="$1-${n}"`)
-      .replace(/url(#([^)]+))/g, `url(#$1-${n})`)
+      .replace(/url\(#([^)]+)\)/g, `url(#$1-${n})`)
       .replace(/href="#([^"]+)"/g, `href="#$1-${n}"`);
   });
 
