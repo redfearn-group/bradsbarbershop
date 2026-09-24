@@ -38,11 +38,11 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="util" role="complementary" aria-label="Shop details"><div class="wrap">
+<aside class="util" aria-label="Shop address, hours and phone"><div class="wrap">
   <span>{{ shop.address.street }}, {{ shop.address.city }}, {{ shop.address.region }} {{ shop.address.postalCode }}</span>
   <span data-status>{% for h in shop.hours | hoursSummary %}{{ h.days }} {{ h.time }}{% if not loop.last %}, {% endif %}{% endfor %}</span>
   <a href="tel:{{ shop.phone.tel }}">{{ shop.phone.display }}</a>
-</div></div>
+</div></aside>
 
 <header class="site"><div class="wrap">
   <a class="brand" href="/" aria-label="{{ shop.name }}, home">{% include "logo-razor.svg" %}</a>
@@ -51,10 +51,10 @@
     <a href="{{ item[0] }}"{% if page.url == item[0] %} aria-current="page"{% endif %}>{{ item[1] }}</a>
     {%- endfor %}
   </nav>
-  <a class="btn btn-solid" href="tel:{{ shop.phone.tel }}">{{ phoneIcon | safe }}<span class="call-short">Call</span><span class="call-long">Call to book</span></a>
+  <a class="btn btn-solid" href="tel:{{ shop.phone.tel }}" aria-label="Call to book, {{ shop.phone.display }}">{{ phoneIcon | safe }}<span class="call-short">Call</span><span class="call-long">Call to book</span></a>
 </div></header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 {{ content | safe }}
 </main>
 
@@ -67,21 +67,21 @@
     <div>
       <h2>Visit</h2>
       <p>{{ shop.address.street }}<br>{{ shop.address.city }}, {{ shop.address.region }} {{ shop.address.postalCode }}<br><a href="tel:{{ shop.phone.tel }}">{{ shop.phone.display }}</a></p>
-      <p><a href="{{ shop.maps.directions }}">Get directions</a></p>
+      <p><a href="{{ shop.maps.directions }}">Get directions<span class="visually-hidden"> in Google Maps</span></a></p>
     </div>
     <div>
       <h2>Hours</h2>
       <p>{% for h in shop.hours | hoursSummary %}{{ h.days }}{% if h.time != "Closed" %}: {{ h.time }}{% else %}: Closed{% endif %}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
-      <p class="social">{% for s in shop.social %}<a href="{{ s.url }}">{{ s.name }}</a>{% if not loop.last %} &middot; {% endif %}{% endfor %}</p>
+      <p class="social">{% for s in shop.social %}<a href="{{ s.url }}">{{ s.label or s.name }}</a>{% if not loop.last %} &middot; {% endif %}{% endfor %}</p>
     </div>
   </div>
   <p class="fine">&copy; {% year %} {{ shop.name }}. Walk-ins welcome.</p>
 </div></footer>
 
-<div class="callbar">
-  <a class="btn btn-solid" href="tel:{{ shop.phone.tel }}">{{ phoneIcon | safe }}Call</a>
-  <a class="btn btn-line" href="{{ shop.maps.directions }}">{{ pinIcon | safe }}Directions</a>
-</div>
+<aside class="callbar" aria-label="Call or get directions">
+  <a class="btn btn-solid" href="tel:{{ shop.phone.tel }}" aria-label="Call {{ shop.phone.display }}">{{ phoneIcon | safe }}Call</a>
+  <a class="btn btn-line" href="{{ shop.maps.directions }}">{{ pinIcon | safe }}Directions<span class="visually-hidden"> in Google Maps</span></a>
+</aside>
 
 <script>
 // Marks today's row in any hours table and replaces [data-status] text with open or closed,
@@ -103,7 +103,13 @@
     else if (today.open && now < num(today.open)) msg = "Closed now. Opens today at " + label(today.open);
     else for (var i = 1; i <= 7; i++) { var d = H[(day + i) % 7]; if (d.open) { msg = "Closed now. Opens " + (i === 1 ? "tomorrow" : d.day) + " at " + label(d.open); break; } }
     document.querySelectorAll("[data-status]").forEach(function (el) { el.textContent = msg; });
-    document.querySelectorAll('table.hours tr[data-day="' + day + '"]').forEach(function (tr) { tr.classList.add("today"); });
+    document.querySelectorAll('table.hours tr[data-day="' + day + '"]').forEach(function (tr) {
+      tr.classList.add("today");
+      var tag = document.createElement("span");
+      tag.className = "today-tag";
+      tag.textContent = "Today";
+      tr.querySelector("th").append(" ", tag);
+    });
     document.documentElement.classList.add(today.open && now >= num(today.open) && now < num(today.close) ? "is-open" : "is-closed");
   } catch (e) {}
 })();

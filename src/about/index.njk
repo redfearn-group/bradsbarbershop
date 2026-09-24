@@ -21,9 +21,9 @@ description: Brad's Barber Shop has been cutting hair on Main Street in Spanish 
 </div></section>
 
 <section class="section-tight"><div class="wrap grid-3">
-  <div class="feat"><div class="plate">{% include "art/razor.svg" %}</div><h3>The straight-razor finish</h3><p>Every haircut ends with a straight-razor neck shave.</p></div>
-  <div class="feat"><div class="plate">{% include "art/chair.svg" %}</div><h3>Walk in, or call ahead</h3><p>There's no app and no online booking.</p></div>
-  <div class="feat"><div class="plate">{% include "art/shears-comb.svg" %}</div><h3>Cuts for men and kids</h3><p>One short price list and no surprises. See the <a class="text-link" href="/prices/">prices</a>.</p></div>
+  <div class="feat"><div class="plate">{% art "razor" %}</div><h2>The straight-razor finish</h2><p>Every haircut ends with a straight-razor neck shave.</p></div>
+  <div class="feat"><div class="plate">{% art "chair" %}</div><h2>Walk in, or call ahead</h2><p>There's no app and no online booking.</p></div>
+  <div class="feat"><div class="plate">{% art "shears-comb" %}</div><h2>Cuts for men and kids</h2><p>One short price list and no surprises. See the <a class="text-link" href="/prices/">prices</a>.</p></div>
 </div></section>
 
 {%- if shop.barbers.length %}
@@ -37,9 +37,9 @@ description: Brad's Barber Shop has been cutting hair on Main Street in Spanish 
 </div></section>
 {%- endif %}
 
-<section class="band" aria-label="Reviews and awards"><div class="wrap proof">
-  <div><b>{{ shop.rating.value }} stars</b><span>Rated on <a href="{{ shop.rating.url }}">{{ shop.rating.source }}</a></span></div>
+<section class="band" aria-label="Reviews and awards"><ul class="wrap proof">
+  <li><b>{{ shop.rating.value }} stars</b> <span>Rated on <a href="{{ shop.rating.url }}">{{ shop.rating.source }}</a></span></li>
   {%- for a in shop.awards %}
-  <div><b>{{ a.title }}</b><span>{{ a.detail }}</span></div>
+  <li><b>{{ a.title }}</b> <span>{{ a.detail }}</span></li>
   {%- endfor %}
-</div></section>
+</ul></section>

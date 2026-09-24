@@ -15,7 +15,7 @@ description: Brad's Barber Shop, 54 N Main Street, Spanish Fork, Utah. Hours, di
     <address style="margin-top:14px">{{ shop.address.street }}<br>{{ shop.address.city }}, {{ shop.address.region }} {{ shop.address.postalCode }}</address>
     <div class="cta">
       <a class="btn btn-solid" href="tel:{{ shop.phone.tel }}">Call {{ shop.phone.display }}</a>
-      <a class="btn btn-line" href="{{ shop.maps.directions }}">Get directions</a>
+      <a class="btn btn-line" href="{{ shop.maps.directions }}">Get directions<span class="visually-hidden"> in Google Maps</span></a>
     </div>
     <h2 style="margin-top:32px">Hours</h2>
     {% include "partials/hours-table.njk" %}
@@ -27,7 +27,7 @@ description: Brad's Barber Shop, 54 N Main Street, Spanish Fork, Utah. Hours, di
 </div></section>
 
 <section class="section-tight visit"><div class="wrap"><div class="card">
-  <div class="scene">{% include "art/storefront.svg" %}</div>
+  <div class="scene">{% art "storefront" %}</div>
   <div class="body">
     <h2>Look for the pole.</h2>
     <p class="muted">Look for the blue awning on Main Street in downtown Spanish Fork, with the barber pole on the wall by the window.</p>

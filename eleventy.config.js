@@ -1,16 +1,20 @@
+import { readFileSync } from "node:fs";
+
 // Hours are stored as "HH:MM" strings in shop.json and formatted here, never through
 // new Date(), so a build machine in another time zone can't shift them.
-const SHORT = { Su: "Sun", Mo: "Mon", Tu: "Tue", We: "Wed", Th: "Thu", Fr: "Fri", Sa: "Sat" };
+// Day names are written out in full: screen readers read "Tue" as a word, not a day.
+const DAY = { Su: "Sunday", Mo: "Monday", Tu: "Tuesday", We: "Wednesday", Th: "Thursday", Fr: "Friday", Sa: "Saturday" };
 const WEEK = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 
 function timeLabel(hhmm) {
   const [h, m] = hhmm.split(":").map(Number);
   const suffix = h < 12 ? "AM" : "PM";
   const h12 = h % 12 || 12;
-  return m ? `${h12}:${String(m).padStart(2, "0")} ${suffix}` : `${h12} ${suffix}`;
+  // A no-break space keeps "8 AM" together when a narrow screen wraps "8 AM to 6 PM".
+  return m ? `${h12}:${String(m).padStart(2, "0")}\u00A0${suffix}` : `${h12}\u00A0${suffix}`;
 }
 
-// Collapses the week into lines like "Tue to Fri: 8 AM to 6 PM" plus one "Closed ..." line.
+// Collapses the week into lines like "Tuesday to Friday: 8 AM to 6 PM" plus one "Closed ..." line.
 function hoursSummary(hours) {
   const byCode = Object.fromEntries(hours.map((d) => [d.code, d]));
   const lines = [];
@@ -19,7 +23,7 @@ function hoursSummary(hours) {
   for (const code of WEEK) {
     const d = byCode[code];
     if (!d || !d.open) {
-      closed.push(SHORT[code]);
+      closed.push(DAY[code]);
       run = null;
       continue;
     }
@@ -32,12 +36,12 @@ function hoursSummary(hours) {
     }
   }
   const out = lines.map((r) => ({
-    days: r.first === r.last ? SHORT[r.first] : `${SHORT[r.first]} to ${SHORT[r.last]}`,
+    days: r.first === r.last ? DAY[r.first] : `${DAY[r.first]} to ${DAY[r.last]}`,
     time: r.span,
   }));
   if (closed.length) {
-    // Sunday-first reads naturally for closed days: "Sun and Mon", not "Mon and Sun".
-    const order = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    // Sunday-first reads naturally for closed days: "Sunday and Monday", not "Monday and Sunday".
+    const order = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     closed.sort((a, b) => order.indexOf(a) - order.indexOf(b));
     const days = closed.length > 1 ? `${closed.slice(0, -1).join(", ")} and ${closed.at(-1)}` : closed[0];
     out.push({ days, time: "Closed" });
@@ -71,6 +75,18 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+  // Inlines an illustration from src/_includes/art/. Each use gets its own suffix on
+  // any id inside the SVG, so the same drawing can appear twice on a page without
+  // duplicate ids breaking the second copy's clip paths or patterns.
+  let artUses = 0;
+  eleventyConfig.addShortcode("art", (name) => {
+    const n = ++artUses;
+    return readFileSync(`src/_includes/art/${name}.svg`, "utf8")
+      .replace(/id="([^"]+)"/g, `id="$1-${n}"`)
+      .replace(/url(#([^)]+))/g, `url(#$1-${n})`)
+      .replace(/href="#([^"]+)"/g, `href="#$1-${n}"`);
+  });
 
   return {
     dir: {
