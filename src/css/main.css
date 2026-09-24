@@ -93,14 +93,20 @@ h1, h2, h3 { font-family: var(--head); font-weight: 700; line-height: 1.1; margi
 .util .wrap { display: flex; justify-content: space-between; gap: 16px; padding-top: 8px; padding-bottom: 8px; }
 @media (min-width: 900px) { .util { display: block; } }
 header.site { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
-header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; }
+header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; column-gap: 16px; padding-top: 10px; }
 .brand { display: block; flex: none; }
 .logo { height: 46px; width: auto; aspect-ratio: 328 / 110; }
 @media (min-width: 760px) { .logo { height: 58px; } }
-nav.main { display: none; gap: 28px; font-weight: 600; }
-nav.main a { text-decoration: none; padding: 10px 0; border-bottom: 2px solid transparent; }
+/* On phones and tablets the menu is a full-width row under the logo; on desktop it sits inline. */
+nav.main { order: 3; flex-basis: 100%; display: flex; justify-content: space-between; margin-top: 8px; border-top: 1px solid var(--line); font-weight: 600; }
+nav.main a { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 44px; text-decoration: none; border-bottom: 2px solid transparent; }
 nav.main a:hover, nav.main a[aria-current="page"] { border-bottom-color: var(--red); }
-@media (min-width: 900px) { nav.main { display: flex; } }
+@media (min-width: 900px) {
+  header.site .wrap { flex-wrap: nowrap; min-height: 72px; padding-top: 0; }
+  nav.main { order: 0; flex-basis: auto; gap: 28px; margin-top: 0; border-top: 0; }
+  nav.main a { flex: none; }
+}
+@media (max-width: 899px) { html { scroll-padding-top: 130px; } }
 header.site .btn { min-height: 44px; padding: 10px 16px; }
 .call-long { display: none; }
 @media (min-width: 600px) { .call-short { display: none; } .call-long { display: inline; } }
