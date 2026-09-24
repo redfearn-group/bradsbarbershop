@@ -27,7 +27,7 @@
     { "day": "Wednesday", "code": "We", "open": "08:00", "close": "18:00" },
     { "day": "Thursday",  "code": "Th", "open": "08:00", "close": "18:00" },
     { "day": "Friday",    "code": "Fr", "open": "08:00", "close": "18:00" },
-    { "day": "Saturday",  "code": "Sa", "open": "07:00", "close": "14:00" }
+    { "day": "Saturday",  "code": "Sa", "open": "08:00", "close": "12:30" }
   ],
 
   "services": [
