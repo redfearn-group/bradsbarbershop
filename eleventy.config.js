@@ -55,6 +55,15 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter("timeLabel", timeLabel);
   eleventyConfig.addFilter("hoursSummary", hoursSummary);
+  // Rotates the week so it starts on the first open day after a closed stretch
+  // (Tuesday for this shop), leaving the closed days at the end. Keeps each day's
+  // 0-6 index so the "today" script can still find it.
+  eleventyConfig.addFilter("weekForDisplay", (hours) => {
+    const n = hours.length;
+    const start = hours.findIndex((d, i) => d.open && !hours[(i + n - 1) % n].open);
+    const from = start < 0 ? 0 : start;
+    return Array.from({ length: n }, (_, k) => ({ ...hours[(from + k) % n], index: (from + k) % n }));
+  });
   eleventyConfig.addFilter("money", (n) => `$${n}`);
   eleventyConfig.addFilter("hourNumber", (hhmm) => {
     const [h, m] = hhmm.split(":").map(Number);
