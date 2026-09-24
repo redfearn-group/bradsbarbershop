@@ -1,0 +1,8 @@
+<ul class="prices">
+  {%- for s in services %}
+  <li>
+    <span class="n">{{ s.name }}</span><span class="dots" aria-hidden="true"></span><span class="p">{{ s.price | money }}</span>
+    {%- if showDescriptions and s.description %}<span class="d">{{ s.description }}</span>{% endif %}
+  </li>
+  {%- endfor %}
+</ul>

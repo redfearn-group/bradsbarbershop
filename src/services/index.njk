@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+title: Prices
+description: Haircut prices at Brad's Barber Shop in Spanish Fork, Utah. Walk-ins welcome, or call to book a time.
+---
+<section class="page-head"><div class="wrap">
+  <p class="eyebrow">Prices</p>
+  <h1>Haircuts and prices</h1>
+  <p class="lead">Simple menu, classic cuts. Every haircut is finished with a straight-razor neck shave.</p>
+</div></section>
+
+<section class="section-tight"><div class="wrap grid-2">
+  <div class="card board">
+    <h2>Haircuts</h2>
+    {%- set services = shop.services -%}{%- set showDescriptions = true -%}
+    {% include "partials/price-list.njk" %}
+    <p class="small">Prices as posted in the shop.</p>
+    <div class="board-art">{% include "art/shears-comb.svg" %}</div>
+  </div>
+  <div class="card">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><b>Walk in</b> any time we're open and take a seat.</li>
+      <li><b>Or call ahead</b> at <a href="tel:{{ shop.phone.tel }}">{{ shop.phone.display }}</a> to book a time.</li>
+      <li><b>Leave sharp.</b> Every cut ends with a straight-razor neck shave.</li>
+    </ol>
+    <h2 style="margin-top:28px">Hours</h2>
+    {% include "partials/hours-table.njk" %}
+  </div>
+</div></section>
+
+<div class="strip" aria-hidden="true"></div>
+
+<section class="band" aria-label="Call to book"><div class="wrap" style="text-align:center">
+  <h2 style="font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:18px">Ready for a cut?</h2>
+  <div class="cta" style="justify-content:center">
+    <a class="btn btn-solid" href="tel:{{ shop.phone.tel }}">Call {{ shop.phone.display }}</a>
+    <a class="btn btn-line" style="color:var(--band-ink)" href="{{ shop.maps.directions }}">Get directions</a>
+  </div>
+</div></section>

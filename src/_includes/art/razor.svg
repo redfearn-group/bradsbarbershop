@@ -1,0 +1,16 @@
+<svg aria-hidden="true" focusable="false" class="ill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120">
+  <!-- blade -->
+  <path d="M14,60 Q40,42 100,40 Q160,38 178,44 Q202,50 210,58 Q202,68 178,76 Q160,82 100,80 Q40,78 14,60 Z"
+        fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- paper highlight along the spine -->
+  <path d="M24,52 Q90,36 176,50" fill="none" stroke="var(--ill-paper, #F7F4EF)" stroke-width="4" stroke-linecap="round"/>
+  <!-- tang with jimps -->
+  <path d="M204,49 L210,53 L214,49 L218,53 L222,49 L226,53 L230,50 L230,68 L204,68 Z"
+        fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- handle scales -->
+  <rect x="228" y="49" width="90" height="20" rx="10" transform="rotate(13 228 59)"
+        fill="var(--ill-accent, #BF1E2E)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="248" y1="55" x2="300" y2="72" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  <!-- pivot pin -->
+  <circle cx="232" cy="59" r="6" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

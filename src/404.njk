@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+title: Page not found
+description: That page isn't here. Head back home, or call the shop.
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
+<section class="section notfound"><div class="wrap">
+  <p class="eyebrow">404</p>
+  <h1 style="font-size:clamp(2.1rem,5vw,3.4rem)">That page isn't here.</h1>
+  <p class="lead muted" style="margin-top:16px;max-width:44ch">The link may be old, or the address may have a typo. Everything you need is one tap away.</p>
+  <div class="cta" style="margin-top:8px">
+    <a class="btn btn-solid" href="/">Back to the home page</a>
+    <a class="btn btn-line" href="tel:{{ shop.phone.tel }}">Call {{ shop.phone.display }}</a>
+  </div>
+</div></section>

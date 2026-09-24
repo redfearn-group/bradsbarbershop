@@ -1,0 +1,6 @@
+<table class="hours">
+  <caption class="visually-hidden">Opening hours</caption>
+  {%- for h in shop.hours %}
+  <tr data-day="{{ loop.index0 }}"><th scope="row">{{ h.day }}</th><td>{% if h.open %}{{ h.open | timeLabel }} to {{ h.close | timeLabel }}{% else %}Closed{% endif %}</td></tr>
+  {%- endfor %}
+</table>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" aria-hidden="true" focusable="false" class="ill">
+  <defs>
+    <clipPath id="sfPoleClip">
+      <rect x="280" y="184" width="20" height="76"/>
+    </clipPath>
+    <pattern id="sfPoleStripes" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect x="0" y="0" width="16" height="16" fill="var(--ill-paper, #F7F4EF)"/>
+      <rect x="0" y="0" width="6" height="16" fill="var(--ill-accent, #BF1E2E)"/>
+      <rect x="9" y="0" width="6" height="16" fill="var(--ill-ink, #0A1128)"/>
+    </pattern>
+  </defs>
+
+  <!-- sky -->
+  <rect x="0" y="0" width="480" height="280" fill="var(--ill-paper, #F7F4EF)"/>
+  <!-- sidewalk -->
+  <rect x="0" y="280" width="480" height="40" fill="var(--ill-mid, #8A93A6)"/>
+  <line x1="0" y1="280" x2="480" y2="280" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- flat parapet roofline -->
+  <rect x="35" y="58" width="410" height="18" rx="2" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- stucco wall -->
+  <rect x="45" y="76" width="390" height="204" fill="var(--ill-paper, #F7F4EF)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- soft shade block, right bay -->
+  <rect x="352" y="150" width="78" height="130" fill="var(--ill-mid, #8A93A6)" opacity="0.18"/>
+
+  <!-- corner stone pier -->
+  <rect x="45" y="76" width="32" height="204" fill="var(--ill-paper, #F7F4EF)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="49" y="82" width="24" height="22" rx="3" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="50" y="108" width="25" height="24" rx="3" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="48" y="136" width="26" height="22" rx="3" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="49" y="222" width="24" height="24" rx="3" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="50" y="250" width="25" height="24" rx="3" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- display window -->
+  <rect x="88" y="148" width="150" height="108" fill="var(--ill-paper, #F7F4EF)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="88" y1="172" x2="238" y2="172" stroke="var(--ill-ink, #0A1128)" stroke-width="2"/>
+  <line x1="104" y1="188" x2="150" y2="234" stroke="var(--ill-mid, #8A93A6)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <rect x="82" y="256" width="162" height="10" rx="2" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- stone pier beside the door -->
+  <rect x="252" y="76" width="32" height="204" fill="var(--ill-paper, #F7F4EF)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="256" y="82" width="24" height="22" rx="3" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="255" y="108" width="25" height="24" rx="3" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="257" y="136" width="24" height="22" rx="3" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- awning: long fabric shed over window and door -->
+  <path d="M64,100 L416,100 L424,132 L56,132 Z" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="50" y="132" width="380" height="28" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="240" y="152" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="19" letter-spacing="1.5" fill="var(--ill-paper, #F7F4EF)">BARBER SHOP</text>
+
+  <!-- stone pier continues below awning -->
+  <rect x="256" y="222" width="24" height="24" rx="3" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="255" y="250" width="25" height="24" rx="3" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- glass door with push bar -->
+  <rect x="296" y="160" width="64" height="14" fill="var(--ill-paper, #F7F4EF)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="296" y="174" width="64" height="106" fill="var(--ill-mid, #8A93A6)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="328" y1="174" x2="328" y2="280" stroke="var(--ill-ink, #0A1128)" stroke-width="2"/>
+  <rect x="306" y="216" width="38" height="8" rx="3" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- barber pole mounted on the stone pier -->
+  <path d="M262,178 L282,178 L282,168 L272,168 Z" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="290" cy="166" r="6" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3"/>
+  <rect x="276" y="172" width="28" height="10" rx="4" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="280" y="184" width="20" height="76" fill="url(#sfPoleStripes)" clip-path="url(#sfPoleClip)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="276" y="260" width="28" height="10" rx="4" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="282" y="270" width="16" height="6" rx="2" fill="var(--ill-ink, #0A1128)" stroke="var(--ill-ink, #0A1128)" stroke-width="2"/>
+</svg>

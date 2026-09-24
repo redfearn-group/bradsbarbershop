@@ -1,0 +1,82 @@
+---
+layout: layouts/base.njk
+---
+{%- set photo = shop.gallery[0] -%}
+<section class="hero"><div class="wrap">
+  <div>
+    <p class="eyebrow">Main Street, Spanish Fork &middot; Since {{ shop.foundingYear }}</p>
+    <h1>{{ shop.tagline }}</h1>
+    <p class="lead">Walk in, take a seat, and leave looking sharp. Every haircut ends with a straight-razor neck shave, the way it has always been done here.</p>
+    <div class="cta">
+      <a class="btn btn-solid" href="tel:{{ shop.phone.tel }}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Call {{ shop.phone.display }}</a>
+      <a class="btn btn-line" href="{{ shop.maps.directions }}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Get directions</a>
+    </div>
+    <div class="status">
+      <span><i class="dot" aria-hidden="true"></i><span data-status>{% for h in shop.hours | hoursSummary %}{{ h.days }} {{ h.time }}{% if not loop.last %}, {% endif %}{% endfor %}</span></span>
+      <span>Walk-ins welcome</span>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="hero-pole">{% include "art/pole.svg" %}</div>
+    <figure class="frame">
+      <img src="{{ photo.src }}"{% if photo.srcSmall %} srcset="{{ photo.srcSmall }} 800w, {{ photo.src }} {{ photo.width }}w" sizes="(min-width: 960px) 560px, 100vw"{% endif %}width="{{ photo.width }}" height="{{ photo.height }}" alt="{{ photo.alt }}" fetchpriority="high">
+      <figcaption>{{ photo.caption }}</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<div class="strip" aria-hidden="true"></div>
+
+<section class="section" aria-label="Why come in"><div class="wrap grid-3">
+  <div class="feat"><div class="plate">{% include "art/chair.svg" %}</div><h3>Walk-ins welcome</h3><p>No app and no online booking. Walk in, or call ahead to book a time.</p></div>
+  <div class="feat"><div class="plate">{% include "art/razor.svg" %}</div><h3>Straight-razor finish</h3><p>Every haircut is finished with a straight-razor neck shave.</p></div>
+  <div class="feat"><div class="plate">{% include "art/pole.svg" %}</div><h3>Since {{ shop.foundingYear }}</h3><p>Cutting hair on Main Street in Spanish Fork for more than 45 years.</p></div>
+</div></section>
+
+<section class="section-tight"><div class="wrap grid-2">
+  <div class="card board" id="prices">
+    <p class="eyebrow">Prices</p>
+    <h2>Haircuts</h2>
+    {%- set services = shop.services -%}{%- set showDescriptions = false -%}
+    {% include "partials/price-list.njk" %}
+    <p class="small">Every haircut includes a straight-razor neck shave. <a class="text-link" href="/services/">All prices</a></p>
+    <div class="board-art">{% include "art/shears-comb.svg" %}</div>
+  </div>
+  <div class="card" id="hours">
+    <p class="eyebrow">Hours</p>
+    <h2>When we're open</h2>
+    {% include "partials/hours-table.njk" %}
+    <p class="small">Walk in any time we're open, or call to book a time.</p>
+  </div>
+</div></section>
+
+<section class="band" aria-label="Reviews and awards"><div class="wrap proof">
+  <div><b>{{ shop.rating.value }} stars</b><span>Rated on <a href="{{ shop.rating.url }}">{{ shop.rating.source }}</a></span></div>
+  {%- for a in shop.awards %}
+  <div><b>{{ a.title }}</b><span>{{ a.detail }}</span></div>
+  {%- endfor %}
+</div></section>
+
+<section class="section story"><div class="wrap">
+  <div class="story-art"><div class="checker" aria-hidden="true"></div>{% include "art/chair.svg" %}</div>
+  <div>
+    <p class="eyebrow">The shop</p>
+    <h2>A Main Street barber shop since {{ shop.foundingYear }}.</h2>
+    <p>Brad's has been cutting hair in downtown Spanish Fork since {{ shop.foundingYear }}. Classic chairs, a checkered floor and a pole out front. Not much has changed, and regulars like it that way.</p>
+    <p><a class="text-link" href="/about/">More about the shop</a></p>
+  </div>
+</div></section>
+
+<section class="section-tight visit"><div class="wrap"><div class="card">
+  <div class="scene">{% include "art/storefront.svg" %}</div>
+  <div class="body">
+    <p class="eyebrow">Visit</p>
+    <h2>Find the pole on Main Street.</h2>
+    <address>{{ shop.address.street }}<br>{{ shop.address.city }}, {{ shop.address.region }} {{ shop.address.postalCode }}</address>
+    <p class="muted">{% for h in shop.hours | hoursSummary %}{{ h.days }}{% if h.time != "Closed" %}: {{ h.time }}{% else %}: Closed{% endif %}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+    <div class="cta">
+      <a class="btn btn-solid" href="{{ shop.maps.directions }}">Get directions</a>
+      <a class="btn btn-line" href="tel:{{ shop.phone.tel }}">{{ shop.phone.display }}</a>
+    </div>
+  </div>
+</div></div></section>
