@@ -15,32 +15,39 @@ Two checkpoints in this guide need your explicit go-ahead before you act: step 4
 
 ## Step 1. Record the current DNS (read-only)
 
-Run this to see what's live right now:
+Nothing changes in this step. It records what's live today so you can put it back if you ever need to.
+
+**1a. Look up the current records and save a copy.** Run this in PowerShell. It prints one table and saves the same table to your Desktop:
 
 ```powershell
-Resolve-DnsName bradsbarbershop.com -Type A; Resolve-DnsName www.bradsbarbershop.com -Type CNAME; Resolve-DnsName bradsbarbershop.com -Type NS; Resolve-DnsName bradsbarbershop.com -Type TXT; Resolve-DnsName bradsbarbershop.com -Type MX
+$dns = foreach ($q in @(@('bradsbarbershop.com','A'), @('bradsbarbershop.com','AAAA'), @('www.bradsbarbershop.com','CNAME'), @('bradsbarbershop.com','NS'), @('bradsbarbershop.com','MX'), @('bradsbarbershop.com','TXT'))) { Resolve-DnsName -Name $q[0] -Type $q[1] -ErrorAction SilentlyContinue | Where-Object { $_.Section -eq 'Answer' } | Select-Object Name, Type, @{n='Value'; e={ if ($_.IPAddress) { $_.IPAddress } elseif ($_.NameHost) { $_.NameHost } elseif ($_.NameExchange) { $_.NameExchange } else { $_.Strings -join ' ' } }} }; $dns | Format-Table -AutoSize | Out-String -Width 200 | Out-File -Encoding utf8 "$env:USERPROFILE\Desktop\bradsbarbershop-dns-before.txt"; $dns | Format-Table -AutoSize
 ```
 
-Expected: A returns 192.0.78.24 and 192.0.78.25. CNAME for www returns bradsbarbershop.com. NS returns ns1.wordpress.com, ns2.wordpress.com, ns3.wordpress.com. TXT returns no TXT records, only an SOA line from ns1.wordpress.com (that SOA line means "nothing here", which is correct today). MX returns smtp-fwd.wordpress.com.
+Expected: a seven-row table, and a file named `bradsbarbershop-dns-before.txt` on your Desktop with the same table:
 
-To save the same output to a file instead of just reading it on screen:
-
-```powershell
-$out = "$env:USERPROFILE\Desktop\bradsbarbershop-dns-before.txt"
-Resolve-DnsName bradsbarbershop.com -Type A | Out-File -Encoding utf8 $out
-Resolve-DnsName www.bradsbarbershop.com -Type CNAME | Out-File -Encoding utf8 -Append $out
-Resolve-DnsName bradsbarbershop.com -Type NS | Out-File -Encoding utf8 -Append $out
-Resolve-DnsName bradsbarbershop.com -Type TXT | Out-File -Encoding utf8 -Append $out
-Resolve-DnsName bradsbarbershop.com -Type MX | Out-File -Encoding utf8 -Append $out
+```
+Name                     Type Value
+----                     ---- -----
+bradsbarbershop.com         A 192.0.78.24
+bradsbarbershop.com         A 192.0.78.25
+www.bradsbarbershop.com CNAME bradsbarbershop.com
+bradsbarbershop.com        NS ns1.wordpress.com
+bradsbarbershop.com        NS ns2.wordpress.com
+bradsbarbershop.com        NS ns3.wordpress.com
+bradsbarbershop.com        MX smtp-fwd.wordpress.com
 ```
 
-Expected: a file named `bradsbarbershop-dns-before.txt` appears on your Desktop containing all five results. Open it and paste the contents into chat so there's a record here too.
+There are no AAAA or TXT rows, because neither record exists today. Paste the table into chat so there's a copy there too.
 
-Next, in a browser, go to WordPress.com and open Upgrades > Domains > bradsbarbershop.com > DNS records > Manage. Take a screenshot of the full list of records. This is your rollback reference for step 4, keep it. If that menu has moved by the time you look, the older path was Domains > Manage DNS for the same screen; use whichever one your account shows.
+**1b. Screenshot the DNS records at WordPress.com.** Sign in at https://wordpress.com/domains/manage, click **bradsbarbershop.com**, then open **DNS records**. The older menu path is Upgrades > Domains > bradsbarbershop.com > DNS records. Take one screenshot that shows the whole list, including any rows marked "Handled by WordPress.com", and save it with the text file.
 
-While you're there, also check Upgrades > Purchases and note the domain's renewal date and price. You'll use this again in step 8 to confirm the domain is billed separately from the hosting plan.
+Expected: the list matches the table above. It shows two A records (or a single "Handled by WordPress.com" default), the www CNAME, and the MX record for email forwarding. This screenshot is your rollback reference.
 
-Checkpoint: confirm the DNS output matches what's described above and that you have the screenshot and the renewal date before moving on.
+**1c. Note the renewal date and price.** Open https://wordpress.com/me/purchases. Write down the renewal date and price for the **bradsbarbershop.com** domain, and separately for the **hosting plan**.
+
+Expected: the domain and the plan are two separate lines, each with its own renewal date. Step 8 uses this to cancel only the plan.
+
+Checkpoint: you have the text file, the screenshot and both renewal dates. Nothing on the live site has changed.
 
 ---
 
