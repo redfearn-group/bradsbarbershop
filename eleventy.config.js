@@ -56,6 +56,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/.nojekyll");
   eleventyConfig.addPassthroughCopy("src/site.webmanifest");
+  // Some tools ask for /favicon.ico without reading the page's icon links.
+  eleventyConfig.addPassthroughCopy({ "src/assets/favicon.ico": "favicon.ico" });
 
   eleventyConfig.addFilter("timeLabel", timeLabel);
   eleventyConfig.addFilter("hoursSummary", hoursSummary);
