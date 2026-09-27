@@ -58,6 +58,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/site.webmanifest");
   // Some tools ask for /favicon.ico without reading the page's icon links.
   eleventyConfig.addPassthroughCopy({ "src/assets/favicon.ico": "favicon.ico" });
+  // Google Search Console ownership check. Removing it unverifies the site.
+  eleventyConfig.addPassthroughCopy("src/googledf7d43a2b326367a.html");
 
   eleventyConfig.addFilter("timeLabel", timeLabel);
   eleventyConfig.addFilter("hoursSummary", hoursSummary);
